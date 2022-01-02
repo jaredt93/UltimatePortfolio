@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  UltimatePortfolioApp
 //
-//  Created by Jared Tamulynas on 12/26/21.
+//  Created by Jared Tamulynas on 12/26/21
 //
 
 import SwiftUI
