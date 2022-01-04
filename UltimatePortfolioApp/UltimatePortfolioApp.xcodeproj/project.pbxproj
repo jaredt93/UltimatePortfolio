@@ -12,6 +12,11 @@
 		7F55CE3C277DFF97003DB69A /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F55CE3B277DFF97003DB69A /* CloudKit.framework */; };
 		7F6FF0A8277E568300E9397A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FF0A7277E568300E9397A /* HomeView.swift */; };
 		7F6FF0AA277E56F200E9397A /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6FF0A9277E56F200E9397A /* ProjectsView.swift */; };
+		7F8DA413278227EA00DB6A0B /* Item-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8DA412278227EA00DB6A0B /* Item-CoreDataHelpers.swift */; };
+		7F8DA4152782291D00DB6A0B /* Project-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8DA4142782291D00DB6A0B /* Project-CoreDataHelpers.swift */; };
+		7FCCBC312783576700921704 /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCCBC302783576700921704 /* EditItemView.swift */; };
+		7FCCBC3327835BC300921704 /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCCBC3227835BC300921704 /* ItemRowView.swift */; };
+		7FCCBC3527838EBD00921704 /* Binding-OnChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCCBC3427838EBD00921704 /* Binding-OnChange.swift */; };
 		7FF2DEC42779062F00839832 /* UltimatePortfolioAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2DEC32779062F00839832 /* UltimatePortfolioAppApp.swift */; };
 		7FF2DEC62779062F00839832 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF2DEC52779062F00839832 /* ContentView.swift */; };
 		7FF2DEC82779063200839832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FF2DEC72779063200839832 /* Assets.xcassets */; };
@@ -26,6 +31,11 @@
 		7F55CE3B277DFF97003DB69A /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		7F6FF0A7277E568300E9397A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7F6FF0A9277E56F200E9397A /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
+		7F8DA412278227EA00DB6A0B /* Item-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		7F8DA4142782291D00DB6A0B /* Project-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHelpers.swift"; sourceTree = "<group>"; };
+		7FCCBC302783576700921704 /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
+		7FCCBC3227835BC300921704 /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
+		7FCCBC3427838EBD00921704 /* Binding-OnChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding-OnChange.swift"; sourceTree = "<group>"; };
 		7FF2DEC02779062F00839832 /* UltimatePortfolioApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UltimatePortfolioApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF2DEC32779062F00839832 /* UltimatePortfolioAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioAppApp.swift; sourceTree = "<group>"; };
 		7FF2DEC52779062F00839832 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +89,11 @@
 				7F6FF0A7277E568300E9397A /* HomeView.swift */,
 				7FF2DEC52779062F00839832 /* ContentView.swift */,
 				7F6FF0A9277E56F200E9397A /* ProjectsView.swift */,
+				7F8DA412278227EA00DB6A0B /* Item-CoreDataHelpers.swift */,
+				7FCCBC302783576700921704 /* EditItemView.swift */,
+				7FCCBC3427838EBD00921704 /* Binding-OnChange.swift */,
+				7FCCBC3227835BC300921704 /* ItemRowView.swift */,
+				7F8DA4142782291D00DB6A0B /* Project-CoreDataHelpers.swift */,
 				7F55CE36277CF9EC003DB69A /* DataController.swift */,
 				7F16F371277B846F00C82D40 /* Main.xcdatamodeld */,
 				7FF2DEC72779063200839832 /* Assets.xcassets */,
@@ -167,10 +182,15 @@
 			files = (
 				7F6FF0AA277E56F200E9397A /* ProjectsView.swift in Sources */,
 				7F16F373277B846F00C82D40 /* Main.xcdatamodeld in Sources */,
+				7F8DA4152782291D00DB6A0B /* Project-CoreDataHelpers.swift in Sources */,
 				7F55CE37277CF9EC003DB69A /* DataController.swift in Sources */,
+				7FCCBC3327835BC300921704 /* ItemRowView.swift in Sources */,
 				7FF2DEC62779062F00839832 /* ContentView.swift in Sources */,
+				7FCCBC3527838EBD00921704 /* Binding-OnChange.swift in Sources */,
 				7F6FF0A8277E568300E9397A /* HomeView.swift in Sources */,
 				7FF2DEC42779062F00839832 /* UltimatePortfolioAppApp.swift in Sources */,
+				7F8DA413278227EA00DB6A0B /* Item-CoreDataHelpers.swift in Sources */,
+				7FCCBC312783576700921704 /* EditItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
