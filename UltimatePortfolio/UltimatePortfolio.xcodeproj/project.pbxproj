@@ -24,6 +24,8 @@
 		A046090D27BBE23E0034813F /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046090C27BBE23E0034813F /* ProjectsView.swift */; };
 		A046220A27C52B7900FB4F88 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046220927C52B7900FB4F88 /* SelectSomethingView.swift */; };
 		A046456F27C3EC0200F5E737 /* Sequence-Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046456E27C3EC0200F5E737 /* Sequence-Sorting.swift */; };
+		A0C25F9127CEE97B006B7E46 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C25F9027CEE97B006B7E46 /* ItemListView.swift */; };
+		A0C25F9327CEEA67006B7E46 /* ProjectSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C25F9227CEEA67006B7E46 /* ProjectSummaryView.swift */; };
 		A0C4485C27C9131D0031D9C2 /* Color-Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C4485B27C9131D0031D9C2 /* Color-Additions.swift */; };
 		A0CF280A27BD49070055E68C /* Item-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CF280927BD49070055E68C /* Item-CoreDataHelpers.swift */; };
 		A0CF280C27BD49810055E68C /* Project-CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CF280B27BD49810055E68C /* Project-CoreDataHelpers.swift */; };
@@ -59,6 +61,8 @@
 		A046090C27BBE23E0034813F /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		A046220927C52B7900FB4F88 /* SelectSomethingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
 		A046456E27C3EC0200F5E737 /* Sequence-Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence-Sorting.swift"; sourceTree = "<group>"; };
+		A0C25F9027CEE97B006B7E46 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		A0C25F9227CEEA67006B7E46 /* ProjectSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSummaryView.swift; sourceTree = "<group>"; };
 		A0C4485B27C9131D0031D9C2 /* Color-Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Additions.swift"; sourceTree = "<group>"; };
 		A0CF280927BD49070055E68C /* Item-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item-CoreDataHelpers.swift"; sourceTree = "<group>"; };
 		A0CF280B27BD49810055E68C /* Project-CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project-CoreDataHelpers.swift"; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				A046220927C52B7900FB4F88 /* SelectSomethingView.swift */,
 				A0340F1F27BECA5200447A3A /* ItemRowView.swift */,
 				A0F3228027C67D540013F889 /* AwardsView.swift */,
+				A0C25F9027CEE97B006B7E46 /* ItemListView.swift */,
+				A0C25F9227CEEA67006B7E46 /* ProjectSummaryView.swift */,
 				A00A6DB427BAB9C1003DC8C5 /* DataController.swift */,
 				A0E3F15327BFE381002598C0 /* EditProjectView.swift */,
 				A0F3227C27C67C690013F889 /* Award.swift */,
@@ -225,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A046090D27BBE23E0034813F /* ProjectsView.swift in Sources */,
+				A0C25F9327CEEA67006B7E46 /* ProjectSummaryView.swift in Sources */,
 				A0E3F15027BFD8DF002598C0 /* ProjectHeaderView.swift in Sources */,
 				A0F3228127C67D540013F889 /* AwardsView.swift in Sources */,
 				A00A6DB327BAB74B003DC8C5 /* Main.xcdatamodeld in Sources */,
@@ -239,6 +246,7 @@
 				A0340F2227BECE6000447A3A /* Binding-OnChange.swift in Sources */,
 				A046456F27C3EC0200F5E737 /* Sequence-Sorting.swift in Sources */,
 				A0F3227927C66E780013F889 /* Bundle-Decodable.swift in Sources */,
+				A0C25F9127CEE97B006B7E46 /* ItemListView.swift in Sources */,
 				A046090B27BBE1D30034813F /* HomeView.swift in Sources */,
 				A00A6DA427BAB6E0003DC8C5 /* UltimatePortfolioApp.swift in Sources */,
 				A0CF280A27BD49070055E68C /* Item-CoreDataHelpers.swift in Sources */,
