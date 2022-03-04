@@ -10,15 +10,20 @@ import CoreData
 
 struct HomeView: View {
     @EnvironmentObject var dataController: DataController
-    
+
     static let tag: String? = "Home"
 
-    @FetchRequest(entity: Project.entity(), sortDescriptors: [NSSortDescriptor(keyPath: \Project.title, ascending: true)], predicate: NSPredicate(format: "closed = false")) var projects: FetchedResults<Project>
+    @FetchRequest(
+        entity: Project.entity(),
+        sortDescriptors: [NSSortDescriptor(keyPath: \Project.title, ascending: true)],
+        predicate: NSPredicate(format: "closed = false")
+    ) var projects: FetchedResults<Project>
+
     let items: FetchRequest<Item>
-    
+
     init() {
         let request: NSFetchRequest<Item> = Item.fetchRequest()
-        
+
         let completedPredicate = NSPredicate(format: "completed = false")
         let openPredicate = NSPredicate(format: "project.closed = false")
         let compoundPredicate = NSCompoundPredicate(type: .and, subpredicates: [completedPredicate, openPredicate])
@@ -32,11 +37,11 @@ struct HomeView: View {
         request.fetchLimit = 10
         items = FetchRequest(fetchRequest: request)
     }
-    
+
     var projectRows: [GridItem] {
         [GridItem(.fixed(100))]
     }
-    
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -48,7 +53,7 @@ struct HomeView: View {
                         .padding([.horizontal, .top])
                         .fixedSize(horizontal: false, vertical: true)
                     }
-                    
+
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading) {
                             ItemListView(title: "Up next", items: items.wrappedValue.prefix(3))

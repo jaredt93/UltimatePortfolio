@@ -10,7 +10,7 @@ import SwiftUI
 
 class DataController: ObservableObject {
     let container: NSPersistentCloudKitContainer
-    
+
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Main")
 
@@ -18,36 +18,36 @@ class DataController: ObservableObject {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
 
-        container.loadPersistentStores { storeDescription, error in
+        container.loadPersistentStores { _, error in
             if let error = error {
                 fatalError("Fatal error loading store: \(error.localizedDescription)")
             }
         }
     }
-    
+
     func save() {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
         }
     }
-    
+
     func delete(_ object: NSManagedObject) {
         container.viewContext.delete(object)
     }
-    
+
     func createSampleData() throws {
         let viewContext = container.viewContext
 
-        for i in 1...5 {
+        for projectCount in 1...5 {
             let project = Project(context: viewContext)
-            project.title = "Project \(i)"
+            project.title = "Project \(projectCount)"
             project.items = []
             project.creationDate = Date()
             project.closed = Bool.random()
 
-            for j in 1...10 {
+            for itemCount in 1...10 {
                 let item = Item(context: viewContext)
-                item.title = "Item \(j)"
+                item.title = "Item \(itemCount)"
                 item.creationDate = Date()
                 item.completed = Bool.random()
                 item.project = project
@@ -57,7 +57,7 @@ class DataController: ObservableObject {
 
         try viewContext.save()
     }
-    
+
     func deleteAll() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
@@ -67,7 +67,7 @@ class DataController: ObservableObject {
         let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
         _ = try? container.viewContext.execute(batchDeleteRequest2)
     }
-    
+
     func count<T>(for fetchRequest: NSFetchRequest<T>) -> Int {
         (try? container.viewContext.count(for: fetchRequest)) ?? 0
     }
@@ -90,7 +90,7 @@ class DataController: ObservableObject {
             return false
         }
     }
-    
+
     static var preview: DataController = {
         let dataController = DataController(inMemory: true)
         let viewContext = dataController.container.viewContext
