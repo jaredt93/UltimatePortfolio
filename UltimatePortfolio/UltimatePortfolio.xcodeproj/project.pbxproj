@@ -31,6 +31,7 @@
 		A07C1CA827DCF93F00345A40 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C1CA727DCF93F00345A40 /* ExtensionTests.swift */; };
 		A07C1CAD27DCFB1400345A40 /* DecodableDictionary.json in Resources */ = {isa = PBXBuildFile; fileRef = A07C1CAC27DCFB1400345A40 /* DecodableDictionary.json */; };
 		A07C1CAF27DCFB3F00345A40 /* DecodableString.json in Resources */ = {isa = PBXBuildFile; fileRef = A07C1CAE27DCFB3F00345A40 /* DecodableString.json */; };
+		A08E117C27E3B48B0032F331 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08E117B27E3B48B0032F331 /* HomeViewModel.swift */; };
 		A0B94EE827DA2FF300E275B8 /* UltimatePortfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B94EE727DA2FF300E275B8 /* UltimatePortfolioTests.swift */; };
 		A0B94EEF27DA33AE00E275B8 /* AssetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B94EEE27DA33AE00E275B8 /* AssetTests.swift */; };
 		A0B94EF327DA790F00E275B8 /* ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B94EF227DA790F00E275B8 /* ProjectTests.swift */; };
@@ -98,6 +99,7 @@
 		A07C1CA727DCF93F00345A40 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		A07C1CAC27DCFB1400345A40 /* DecodableDictionary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DecodableDictionary.json; sourceTree = "<group>"; };
 		A07C1CAE27DCFB3F00345A40 /* DecodableString.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DecodableString.json; sourceTree = "<group>"; };
+		A08E117B27E3B48B0032F331 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		A0B94EE527DA2FF300E275B8 /* UltimatePortfolioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UltimatePortfolioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B94EE727DA2FF300E275B8 /* UltimatePortfolioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UltimatePortfolioTests.swift; sourceTree = "<group>"; };
 		A0B94EEE27DA33AE00E275B8 /* AssetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetTests.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				A046090A27BBE1D30034813F /* HomeView.swift */,
+				A08E117B27E3B48B0032F331 /* HomeViewModel.swift */,
 				A0C25F9027CEE97B006B7E46 /* ItemListView.swift */,
 				A0C25F9227CEEA67006B7E46 /* ProjectSummaryView.swift */,
 			);
@@ -371,7 +374,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					A00A6D9F27BAB6E0003DC8C5 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -470,6 +473,7 @@
 				A0E3F15027BFD8DF002598C0 /* ProjectHeaderView.swift in Sources */,
 				A0F3228127C67D540013F889 /* AwardsView.swift in Sources */,
 				A00A6DB327BAB74B003DC8C5 /* Main.xcdatamodeld in Sources */,
+				A08E117C27E3B48B0032F331 /* HomeViewModel.swift in Sources */,
 				A0CF280C27BD49810055E68C /* Project-CoreDataHelpers.swift in Sources */,
 				A0C4485C27C9131D0031D9C2 /* Color-Additions.swift in Sources */,
 				A0E3F15427BFE381002598C0 /* EditProjectView.swift in Sources */,
@@ -563,6 +567,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -624,6 +629,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
