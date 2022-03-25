@@ -182,7 +182,7 @@ struct EditProjectView: View {
                     duration: 1
                 )
                 let pattern = try CHHapticPattern(events: [event1, event2], parameterCurves: [parameter])
-                
+
                 let player = try engine?.makePlayer(with: pattern)
                 try player?.start(atTime: 0)
             } catch {
