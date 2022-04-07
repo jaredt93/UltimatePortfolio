@@ -20,6 +20,10 @@ struct UltimatePortfolioApp: App {
 
         _dataController = StateObject(wrappedValue: dataController)
         _unlockManager = StateObject(wrappedValue: unlockManager)
+
+        #if targetEnvironment(simulator)
+        UserDefaults.standard.set("TwoStraws", forKey: "username")
+        #endif
     }
 
     var body: some Scene {

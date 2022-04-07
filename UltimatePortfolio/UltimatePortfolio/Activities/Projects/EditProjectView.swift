@@ -7,9 +7,13 @@
 
 import SwiftUI
 import CoreHaptics
+import CloudKit
 
 struct EditProjectView: View {
     @ObservedObject var project: Project
+
+    @AppStorage("username") var username: String?
+    @State private var showingSignIn = false
 
     @EnvironmentObject var dataController: DataController
     @Environment(\.presentationMode) var presentationMode
@@ -88,6 +92,11 @@ struct EditProjectView: View {
             }
         }
         .navigationTitle("Edit Project")
+        .toolbar {
+            Button(action: uploadToCloud) {
+                Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+            }
+        }
         .onDisappear(perform: dataController.save)
         .alert(isPresented: $showingDeleteConfirm) {
             Alert(
@@ -97,6 +106,7 @@ struct EditProjectView: View {
                 secondaryButton: .cancel()
             )
         }
+        .sheet(isPresented: $showingSignIn, content: SignInView.init)
     }
 
     func update() {
@@ -201,6 +211,23 @@ struct EditProjectView: View {
         }
     }
 
+    func uploadToCloud() {
+        if let username = username {
+            let records = project.prepareCloudRecords(owner: username)
+            let operation = CKModifyRecordsOperation(recordsToSave: records, recordIDsToDelete: nil)
+            operation.savePolicy = .allKeys
+
+            operation.modifyRecordsCompletionBlock = { _, _, error in
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                }
+            }
+
+            CKContainer.default().publicCloudDatabase.add(operation)
+        } else {
+            showingSignIn = true
+        }
+    }
 }
 
 struct EditProjectView_Previews: PreviewProvider {
