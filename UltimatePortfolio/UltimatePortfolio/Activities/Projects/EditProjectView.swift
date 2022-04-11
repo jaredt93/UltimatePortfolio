@@ -26,6 +26,7 @@ struct EditProjectView: View {
     @State private var remindMe: Bool
     @State private var reminderTime: Date
     @State private var showingNotificationsError = false
+    @State private var cloudStatus = CloudStatus.checking
 
     let colorColumns = [
         GridItem(.adaptive(minimum: 44))
@@ -45,6 +46,10 @@ struct EditProjectView: View {
             _reminderTime = State(wrappedValue: Date())
             _remindMe = State(wrappedValue: false)
         }
+    }
+
+    enum CloudStatus {
+        case checking, exists, absent
     }
 
     var body: some View {
@@ -93,10 +98,20 @@ struct EditProjectView: View {
         }
         .navigationTitle("Edit Project")
         .toolbar {
-            Button(action: uploadToCloud) {
-                Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+            switch cloudStatus {
+            case .checking:
+                ProgressView()
+            case .exists:
+                Button(action: removeFromCloud) {
+                    Label("Remove from iCloud", systemImage: "icloud.slash")
+                }
+            case .absent:
+                Button(action: uploadToCloud) {
+                    Label("Upload to iCloud", systemImage: "icloud.and.arrow.up")
+                }
             }
         }
+        .onAppear(perform: updateCloudStatus)
         .onDisappear(perform: dataController.save)
         .alert(isPresented: $showingDeleteConfirm) {
             Alert(
@@ -223,10 +238,40 @@ struct EditProjectView: View {
                 }
             }
 
+            operation.modifyRecordsCompletionBlock = { _, _, _ in
+                updateCloudStatus()
+            }
+
+            cloudStatus = .checking
+
             CKContainer.default().publicCloudDatabase.add(operation)
         } else {
             showingSignIn = true
         }
+    }
+
+    func updateCloudStatus() {
+        project.checkCloudStatus { exists in
+            if exists {
+                cloudStatus = .exists
+            } else {
+                cloudStatus = .absent
+            }
+        }
+    }
+
+    func removeFromCloud() {
+        let name = project.objectID.uriRepresentation().absoluteString
+        let id = CKRecord.ID(recordName: name)
+
+        let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [id])
+
+        operation.modifyRecordsCompletionBlock = { _, _, _ in
+            updateCloudStatus()
+        }
+
+        cloudStatus = .checking
+        CKContainer.default().publicCloudDatabase.add(operation)
     }
 }
 
