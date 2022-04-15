@@ -23,6 +23,8 @@
 		A0368EFB27FC63210053BCF6 /* SharedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0368EFA27FC63210053BCF6 /* SharedProject.swift */; };
 		A0368EFD27FC633C0053BCF6 /* SharedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0368EFC27FC633C0053BCF6 /* SharedItem.swift */; };
 		A0368EFF27FC63B10053BCF6 /* LoadStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0368EFE27FC63B10053BCF6 /* LoadStates.swift */; };
+		A03B52912805F64B00F1B2A5 /* Error-CloudKitMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B52902805F64B00F1B2A5 /* Error-CloudKitMessages.swift */; };
+		A03B52932805F81F00F1B2A5 /* CloudError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03B52922805F81F00F1B2A5 /* CloudError.swift */; };
 		A046090B27BBE1D30034813F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046090A27BBE1D30034813F /* HomeView.swift */; };
 		A046090D27BBE23E0034813F /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046090C27BBE23E0034813F /* ProjectsView.swift */; };
 		A046220A27C52B7900FB4F88 /* SelectSomethingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A046220927C52B7900FB4F88 /* SelectSomethingView.swift */; };
@@ -146,6 +148,8 @@
 		A0368EFA27FC63210053BCF6 /* SharedProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedProject.swift; sourceTree = "<group>"; };
 		A0368EFC27FC633C0053BCF6 /* SharedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedItem.swift; sourceTree = "<group>"; };
 		A0368EFE27FC63B10053BCF6 /* LoadStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadStates.swift; sourceTree = "<group>"; };
+		A03B52902805F64B00F1B2A5 /* Error-CloudKitMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error-CloudKitMessages.swift"; sourceTree = "<group>"; };
+		A03B52922805F81F00F1B2A5 /* CloudError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudError.swift; sourceTree = "<group>"; };
 		A046090A27BBE1D30034813F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A046090C27BBE23E0034813F /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		A046220927C52B7900FB4F88 /* SelectSomethingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSomethingView.swift; sourceTree = "<group>"; };
@@ -361,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				A0CF280B27BD49810055E68C /* Project-CoreDataHelpers.swift */,
+				A03B52902805F64B00F1B2A5 /* Error-CloudKitMessages.swift */,
 				A0CF280927BD49070055E68C /* Item-CoreDataHelpers.swift */,
 				A046456E27C3EC0200F5E737 /* Sequence-Sorting.swift */,
 				A0F3227827C66E780013F889 /* Bundle-Decodable.swift */,
@@ -400,6 +405,7 @@
 				A0AEF46A27D9793500ED4B29 /* Projects */,
 				A0AEF46B27D9793E00ED4B29 /* Awards */,
 				A0A6136727EB63B4007D1740 /* Unlock */,
+				A03B52922805F81F00F1B2A5 /* CloudError.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -654,6 +660,7 @@
 				A0E5832627EDF894008EC3D2 /* AppDelegate.swift in Sources */,
 				A0E5832827EDF8A8008EC3D2 /* SceneDelegate.swift in Sources */,
 				A0A6E35527FDE12D00D7EF8D /* SharedItemsView.swift in Sources */,
+				A03B52932805F81F00F1B2A5 /* CloudError.swift in Sources */,
 				A073BE4927F1F4A7005A3E16 /* SimplePortfolioWidget.swift in Sources */,
 				A0F3228127C67D540013F889 /* AwardsView.swift in Sources */,
 				A00A6DB327BAB74B003DC8C5 /* Main.xcdatamodeld in Sources */,
@@ -667,6 +674,7 @@
 				A0A6136027EB5CEF007D1740 /* SKProduct-LocalizedPrice.swift in Sources */,
 				A079C42927F11B9700C53FC6 /* DataController-Reminders.swift in Sources */,
 				A073BE4B27F1F59E005A3E16 /* ComplexPortfolioWidget.swift in Sources */,
+				A03B52912805F64B00F1B2A5 /* Error-CloudKitMessages.swift in Sources */,
 				A0A6136427EB624D007D1740 /* ProductView.swift in Sources */,
 				A0E3F15427BFE381002598C0 /* EditProjectView.swift in Sources */,
 				A00A6DB527BAB9C1003DC8C5 /* DataController.swift in Sources */,

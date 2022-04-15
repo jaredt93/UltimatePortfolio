@@ -27,6 +27,7 @@ struct EditProjectView: View {
     @State private var reminderTime: Date
     @State private var showingNotificationsError = false
     @State private var cloudStatus = CloudStatus.checking
+    @State private var cloudError: CloudError?
 
     let colorColumns = [
         GridItem(.adaptive(minimum: 44))
@@ -102,7 +103,9 @@ struct EditProjectView: View {
             case .checking:
                 ProgressView()
             case .exists:
-                Button(action: removeFromCloud) {
+                Button {
+                    removeFromCloud(deleteLocal: false)
+                } label: {
                     Label("Remove from iCloud", systemImage: "icloud.slash")
                 }
             case .absent:
@@ -119,6 +122,12 @@ struct EditProjectView: View {
                 message: Text("Are you sure you want to delete this project? You will also delete all the items it contains."), // swiftlint:disable:this line_length
                 primaryButton: .default(Text("Delete"), action: delete),
                 secondaryButton: .cancel()
+            )
+        }
+        .alert(item: $cloudError) { error in
+            Alert(
+                title: Text("There was an error"),
+                message: Text(error.message)
             )
         }
         .sheet(isPresented: $showingSignIn, content: SignInView.init)
@@ -147,8 +156,12 @@ struct EditProjectView: View {
     }
 
     func delete() {
-        dataController.delete(project)
-        presentationMode.wrappedValue.dismiss()
+        if cloudStatus == .exists {
+            removeFromCloud(deleteLocal: true)
+        } else {
+            dataController.delete(project)
+            presentationMode.wrappedValue.dismiss()
+        }
     }
 
     func colorButton(for item: String) -> some View {
@@ -234,8 +247,10 @@ struct EditProjectView: View {
 
             operation.modifyRecordsCompletionBlock = { _, _, error in
                 if let error = error {
-                    print("Error: \(error.localizedDescription)")
+                    cloudError = error.getCloudKitError()
                 }
+
+                updateCloudStatus()
             }
 
             operation.modifyRecordsCompletionBlock = { _, _, _ in
@@ -260,13 +275,22 @@ struct EditProjectView: View {
         }
     }
 
-    func removeFromCloud() {
+    func removeFromCloud(deleteLocal: Bool) {
         let name = project.objectID.uriRepresentation().absoluteString
         let id = CKRecord.ID(recordName: name)
 
         let operation = CKModifyRecordsOperation(recordsToSave: nil, recordIDsToDelete: [id])
 
-        operation.modifyRecordsCompletionBlock = { _, _, _ in
+        operation.modifyRecordsCompletionBlock = { _, _, error in
+            if let error = error {
+                cloudError = error.getCloudKitError()
+            } else {
+                if deleteLocal {
+                    dataController.delete(project)
+                    presentationMode.wrappedValue.dismiss()
+                }
+            }
+
             updateCloudStatus()
         }
 
